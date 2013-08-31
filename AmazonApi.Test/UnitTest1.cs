@@ -1,0 +1,113 @@
+﻿using System;
+using System.Text;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Mono.Api.AmazonApi.Test.AmazonProxyService;
+
+namespace Mono.Api.AmazonApi.Test
+{
+    /// <summary>
+    /// UnitTest1 の概要の説明
+    /// </summary>
+    [TestClass]
+    public class UnitTest1
+    {
+        public UnitTest1()
+        {
+            //
+            // TODO: コンストラクター ロジックをここに追加します
+            //
+        }
+
+        private TestContext testContextInstance;
+
+        /// <summary>
+        ///現在のテストの実行についての情報および機能を
+        ///提供するテスト コンテキストを取得または設定します。
+        ///</summary>
+        public TestContext TestContext
+        {
+            get
+            {
+                return testContextInstance;
+            }
+            set
+            {
+                testContextInstance = value;
+            }
+        }
+
+        #region 追加のテスト属性
+        //
+        // テストを作成する際には、次の追加属性を使用できます:
+        //
+        // クラス内で最初のテストを実行する前に、ClassInitialize を使用してコードを実行してください
+        // [ClassInitialize()]
+        // public static void MyClassInitialize(TestContext testContext) { }
+        //
+        // クラス内のテストをすべて実行したら、ClassCleanup を使用してコードを実行してください
+        // [ClassCleanup()]
+        // public static void MyClassCleanup() { }
+        //
+        // 各テストを実行する前に、TestInitialize を使用してコードを実行してください
+        // [TestInitialize()]
+        // public void MyTestInitialize() { }
+        //
+        // 各テストを実行した後に、TestCleanup を使用してコードを実行してください
+        // [TestCleanup()]
+        // public void MyTestCleanup() { }
+        //
+        #endregion
+
+        [TestMethod]
+        public void ItemLookup()
+        {
+            var client = new AmazonClient(CountryType.US);
+            Console.WriteLine(client.ItemLookup("0545010225", ResponseGroupType.Small));
+        }
+        [TestMethod]
+        public void CartCreate()
+        {
+            var client = new AmazonClient(CountryType.US);
+            Console.WriteLine(client.CartCreate());
+        }
+        [TestMethod]
+        public void ItemSearch()
+        {
+            var client = new AmazonClient(CountryType.Japan);
+            var r = client.ItemSearch(SearchIndexType.Books);
+            Console.WriteLine(r);
+        }
+
+        [TestMethod]
+        public void ItemSearchProxy()
+        {
+            var client = new AmazonServiceClient();
+            var result = client.ItemSearch(CountryType.UK, SearchIndexType.Electronics, 1);
+            Console.WriteLine(result);
+        }
+
+        [TestMethod]
+        public void ResponseGroupTest()
+        {
+            var r = ResponseGroupType.Small | ResponseGroupType.Reviews;
+            Console.WriteLine(r);
+            Console.WriteLine(Convert.ToString(r));
+        }
+
+        [TestMethod]
+        public void GetRanking()
+        {
+            var c = new AmazonClient(CountryType.Japan);
+            c.GetRanking(SearchIndexType.Books);
+        }
+
+        [TestMethod]
+        public void GetItemDetail()
+        {
+            var c = new AmazonClient(CountryType.Japan);
+            c.GetItemDetail("B007X1U8ZQ");
+        }
+    }
+}

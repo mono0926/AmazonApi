@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AmazonApi" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AmazonApi" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="CountryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="US" />
+      <xs:enumeration value="Japan" />
+      <xs:enumeration value="Germany" />
+      <xs:enumeration value="France" />
+      <xs:enumeration value="Canada" />
+      <xs:enumeration value="UK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CountryType" nillable="true" type="tns:CountryType" />
+  <xs:simpleType name="SearchIndexType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Apparel" />
+      <xs:enumeration value="Appliances" />
+      <xs:enumeration value="ArtsAndCrafts" />
+      <xs:enumeration value="Automotive" />
+      <xs:enumeration value="Baby" />
+      <xs:enumeration value="Beauty" />
+      <xs:enumeration value="Blended" />
+      <xs:enumeration value="Books" />
+      <xs:enumeration value="Classical" />
+      <xs:enumeration value="Collectibles" />
+      <xs:enumeration value="DigitalMusic" />
+      <xs:enumeration value="DVD" />
+      <xs:enumeration value="Electronics" />
+      <xs:enumeration value="ForeignBooks" />
+      <xs:enumeration value="GourmetFood" />
+      <xs:enumeration value="Grocery" />
+      <xs:enumeration value="HealthPersonalCare" />
+      <xs:enumeration value="Hobbies" />
+      <xs:enumeration value="HomeGarden" />
+      <xs:enumeration value="HomeImprovement" />
+      <xs:enumeration value="Industrial" />
+      <xs:enumeration value="Jewelry" />
+      <xs:enumeration value="KindleStore" />
+      <xs:enumeration value="Kitchen" />
+      <xs:enumeration value="Lighting" />
+      <xs:enumeration value="Magazines" />
+      <xs:enumeration value="Merchants" />
+      <xs:enumeration value="Miscellaneous" />
+      <xs:enumeration value="MobileApps" />
+      <xs:enumeration value="MP3Downloads" />
+      <xs:enumeration value="Music" />
+      <xs:enumeration value="MusicalInstruments" />
+      <xs:enumeration value="MusicTracks" />
+      <xs:enumeration value="OfficeProducts" />
+      <xs:enumeration value="OutdoorLiving" />
+      <xs:enumeration value="Outlet" />
+      <xs:enumeration value="PCHardware" />
+      <xs:enumeration value="PetSupplies" />
+      <xs:enumeration value="Photo" />
+      <xs:enumeration value="Shoes" />
+      <xs:enumeration value="SilverMerchant" />
+      <xs:enumeration value="Software" />
+      <xs:enumeration value="SoftwareVideoGames" />
+      <xs:enumeration value="SportingGoods" />
+      <xs:enumeration value="Tools" />
+      <xs:enumeration value="Toys" />
+      <xs:enumeration value="UnboxVideo" />
+      <xs:enumeration value="VHS" />
+      <xs:enumeration value="Video" />
+      <xs:enumeration value="VideoGames" />
+      <xs:enumeration value="Watches" />
+      <xs:enumeration value="Wireless" />
+      <xs:enumeration value="WirelessAccessories" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SearchIndexType" nillable="true" type="tns:SearchIndexType" />
+  <xs:complexType name="ArrayOfSearchIndexType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchIndexType" type="tns:SearchIndexType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchIndexType" nillable="true" type="tns:ArrayOfSearchIndexType" />
+</xs:schema>

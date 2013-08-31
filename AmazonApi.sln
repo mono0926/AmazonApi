@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonApi", "AmazonApi\AmazonApi.csproj", "{EE0EBA7A-F93B-41F6-8701-E1187DCB095A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonApi.Test", "AmazonApi.Test\AmazonApi.Test.csproj", "{EC554BEA-C442-4674-8925-B7236D2F262F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{051C341B-A9BF-46FA-9786-E8B874D22C5F} = {051C341B-A9BF-46FA-9786-E8B874D22C5F}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{63593A05-5596-4178-89B6-C6E5EAB0AF95}"
+	ProjectSection(SolutionItems) = preProject
+		AmazonApi.vsmdi = AmazonApi.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonProxyService", "AmazonProxyService\AmazonProxyService.csproj", "{051C341B-A9BF-46FA-9786-E8B874D22C5F}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = AmazonApi.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE0EBA7A-F93B-41F6-8701-E1187DCB095A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE0EBA7A-F93B-41F6-8701-E1187DCB095A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE0EBA7A-F93B-41F6-8701-E1187DCB095A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE0EBA7A-F93B-41F6-8701-E1187DCB095A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC554BEA-C442-4674-8925-B7236D2F262F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC554BEA-C442-4674-8925-B7236D2F262F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC554BEA-C442-4674-8925-B7236D2F262F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC554BEA-C442-4674-8925-B7236D2F262F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{051C341B-A9BF-46FA-9786-E8B874D22C5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051C341B-A9BF-46FA-9786-E8B874D22C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051C341B-A9BF-46FA-9786-E8B874D22C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051C341B-A9BF-46FA-9786-E8B874D22C5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
